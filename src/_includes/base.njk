@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title | default("Phillip Weinstock") }}</title>
+  <meta name="description" content="{{ description | default('Phillip Weinstock — developer, tinkerer, web experiments.') }}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/" class="nav-home">pw<span class="blink">_</span></a>
+    <div class="nav-links">
+      <a href="/">home</a>
+      <a href="/experience/">experience</a>
+      <a href="/about/">about</a>
+      <a href="/reading/">reading</a>
+      <a href="/case-studies/">case studies</a>
+      <a href="/demos/">demos</a>
+    </div>
+  </nav>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; {% year %} Phillip Weinstock &middot; built with plain text</p>
+  </footer>
+
+  {% if js %}<script src="{{ js }}"></script>{% endif %}
+
+</body>
+</html>
